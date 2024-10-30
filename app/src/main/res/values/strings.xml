@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">CurrencyConverter</string>
+
+    <!-- Network Error -->
+    <string name="server_connection_error">Not able to connect, please retry again</string>
+    <string name="no_internet_connection">No Internet Connection!</string>
+    <string name="permission_not_available">You do not have the required permission!</string>
+    <string name="network_internal_error">Our systems got an error, please retry again</string>
+    <string name="network_server_not_available">Our services are under maintenance, please retry after some time</string>
+    <string name="something_went_wrong">Something went wrong, please try again.</string>
+
+    <string name="loading_text">Loading…</string>
+    <string name="search_hint">Search…</string>
+
+    <!--Keyboard-->
+    <string name="all_clear_button">AC</string>
+    <string name="comma_symbol">,</string>
+    <string name="number_0">0</string>
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+    <string name="number_6">6</string>
+    <string name="number_7">7</string>
+    <string name="number_8">8</string>
+    <string name="number_9">9</string>
+    <string name="backspace_button">backspace</string>
+    <string name="no_data_found">No Data Found</string>
+</resources>

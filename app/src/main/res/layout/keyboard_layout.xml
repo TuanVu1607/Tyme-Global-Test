@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ExchangeCurrencyViewModel"
+            type="com.tymeglobal.test.currency_converter.ui.viewmodels.ExchangeCurrencyViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gray_100"
+        android:orientation="vertical"
+        android:padding="@dimen/base_m_p_m">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="1"
+            android:useDefaultMargins="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAllClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/all_clear_button)}"
+                android:text="@string/all_clear_button"
+                android:textColor="@color/orange_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackspace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/backspace_button)}"
+                app:icon="@drawable/ic_backspace"
+                app:iconGravity="textStart"
+                app:iconTint="@color/orange_900" />
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:columnCount="3"
+            android:rowCount="4"
+            android:useDefaultMargins="true"
+            tools:ignore="UselessParent">
+
+            <!-- Row 1 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_1)}"
+                android:text="@string/number_1"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_2)}"
+                android:text="@string/number_2"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_3)}"
+                android:text="@string/number_3"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <!-- Row 2 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_4)}"
+                android:text="@string/number_4"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_5)}"
+                android:text="@string/number_5"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_6)}"
+                android:text="@string/number_6"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <!-- Row 3 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_7)}"
+                android:text="@string/number_7"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_8)}"
+                android:text="@string/number_8"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_9)}"
+                android:text="@string/number_9"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <!-- Row 4 -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEmpty"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNumber0"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/number_0)}"
+                android:text="@string/number_0"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnComma"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:backgroundTint="@color/white"
+                android:onClick="@{(view)->ExchangeCurrencyViewModel.setInputAmount(@string/comma_symbol)}"
+                android:text="@string/comma_symbol"
+                android:textColor="@color/gray_900"
+                android:textSize="@dimen/base_text_size"
+                android:textStyle="bold" />
+        </GridLayout>
+
+    </LinearLayout>
+</layout>

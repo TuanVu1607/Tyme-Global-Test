@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="currencySymbols"
+            type="com.tymeglobal.test.currency_converter.data.local.db.entity.CurrencyInfoEntity" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivCountryFlag"
+            android:layout_width="@dimen/base_icon_size_lg"
+            android:layout_height="@dimen/base_icon_size"
+            android:layout_margin="@dimen/base_m_p_s"
+            app:imageUrl="@{currencySymbols.icon}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_image_default" />
+
+        <TextView
+            android:id="@+id/tvCurrencyUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/base_m_p_s"
+            android:text="@{currencySymbols.currencyFullUnit}"
+            android:textColor="@color/gray_900"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ivCheck"
+            app:layout_constraintStart_toEndOf="@+id/ivCountryFlag"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Việt Nam đồng (VND)" />
+
+        <ImageView
+            android:id="@+id/ivCheck"
+            android:layout_width="@dimen/base_icon_size"
+            android:layout_height="@dimen/base_icon_size"
+            android:layout_margin="@dimen/base_m_p_s"
+            android:src="@drawable/ic_check"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvCurrencyUnit"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/green_500"
+            tools:ignore="ContentDescription" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

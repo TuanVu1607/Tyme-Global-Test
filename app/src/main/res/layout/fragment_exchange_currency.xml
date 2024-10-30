@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="ExchangeCurrencyViewModel"
+            type="com.tymeglobal.test.currency_converter.ui.viewmodels.ExchangeCurrencyViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_100">
+
+        <!--Input View-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/base_m_p_m"
+            android:elevation="@dimen/base_m_p_s"
+            app:cardCornerRadius="@dimen/base_m_p_s"
+            app:layout_constraintBottom_toTopOf="@+id/ivExchange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/base_m_p_s">
+
+                <LinearLayout
+                    android:id="@+id/llSelectCurrencyInput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
+
+                    <ImageView
+                        android:id="@+id/ivSelectCurrencyInput"
+                        android:layout_width="@dimen/base_icon_size_lg"
+                        android:layout_height="@dimen/base_icon_size"
+                        android:layout_margin="@dimen/base_m_p_s"
+                        app:imageUrl="@{ExchangeCurrencyViewModel.inputCurrency.icon}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/ic_image_default" />
+
+                    <TextView
+                        android:id="@+id/tvCurrencyUnitInput"
+                        marqueeEnabled="@{true}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/base_m_p_s"
+                        android:text="@{ExchangeCurrencyViewModel.inputCurrency.currencyCode}"
+                        android:textColor="@color/gray_900"
+                        android:textSize="@dimen/base_text_size"
+                        android:textStyle="bold"
+                        app:drawableEndCompat="@drawable/ic_arrow_drop_down"
+                        tools:ignore="NestedWeights"
+                        tools:text="USD" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvInputAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_m_p_s"
+                    android:layout_weight="3"
+                    android:text="@{ExchangeCurrencyViewModel.inputAmount}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/orange_900"
+                    android:textSize="@dimen/base_text_size"
+                    android:textStyle="bold"
+                    app:marqueeEnabled="@{true}"
+                    tools:text="1.000" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--Exchange Icon-->
+        <ImageView
+            android:id="@+id/ivExchange"
+            android:layout_width="@dimen/base_icon_size"
+            android:layout_height="@dimen/base_icon_size"
+            android:src="@drawable/ic_currency_exchange"
+            app:layout_constraintBottom_toTopOf="@+id/cvOutput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvInput"
+            tools:ignore="ContentDescription" />
+
+        <!--Output View-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvOutput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/base_m_p_m"
+            android:elevation="@dimen/base_m_p_s"
+            app:cardCornerRadius="@dimen/base_m_p_s"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivExchange">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/base_m_p_s">
+
+                <LinearLayout
+                    android:id="@+id/llSelectCurrencyOutput"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables,UselessParent">
+
+                    <ImageView
+                        android:id="@+id/ivSelectCurrencyOutput"
+                        android:layout_width="@dimen/base_icon_size_lg"
+                        android:layout_height="@dimen/base_icon_size"
+                        android:layout_margin="@dimen/base_m_p_s"
+                        app:imageUrl="@{ExchangeCurrencyViewModel.outputCurrency.icon}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="ContentDescription"
+                        tools:src="@drawable/ic_image_default" />
+
+                    <TextView
+                        android:id="@+id/tvCurrencyUnitOutput"
+                        marqueeEnabled="@{true}"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/base_m_p_s"
+                        android:text="@{ExchangeCurrencyViewModel.outputCurrency.currencyCode}"
+                        android:textColor="@color/gray_900"
+                        android:textSize="@dimen/base_text_size"
+                        android:textStyle="bold"
+                        app:drawableEndCompat="@drawable/ic_arrow_drop_down"
+                        tools:text="VND" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvOutputAmount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/base_m_p_s"
+                    android:layout_weight="3"
+                    android:text="@{ExchangeCurrencyViewModel.outputAmount}"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/gray_900"
+                    android:textSize="@dimen/base_text_size"
+                    android:textStyle="bold"
+                    app:marqueeEnabled="@{true}"
+                    tools:text="25.315.000" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!--Keyboard Layout-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cvOutput">
+
+            <include
+                android:id="@+id/keyboardLayout"
+                layout="@layout/keyboard_layout" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

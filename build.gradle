@@ -1,0 +1,46 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    //Android Gradle Plugin
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.com.android.library) apply false
+    //Kotlin
+    alias(libs.plugins.kotlin.android) apply false
+    alias(libs.plugins.kotlin.kapt) apply false
+    alias(libs.plugins.kotlin.jvm) apply false
+    //KSP (Kotlin Symbol Processing)
+    alias(libs.plugins.com.google.devtools.ksp) apply false
+    //Dependency Injection
+    alias(libs.plugins.com.google.dagger.hilt.android) apply false
+    //Navigation
+    alias(libs.plugins.androidx.navigation.safeargs) apply false
+}
+
+ext {
+    appId = 'com.tymeglobal.test.currency_converter'
+    appCompileSdkVersion = 34
+    appTargetSdkVersion = 34
+    appMinSdkVersion = 23
+    appVersionCode = 1
+    appVersionName = "1.0.0"
+
+
+    def SERVER_TYPE_TEST = "test"
+    def SERVER_TYPE_PRODUCT = "product"
+    def taskName = project.gradle.startParameter.taskNames[0]
+    if (taskName == null) taskName = ''
+    def serverType = taskName === "debug" ? SERVER_TYPE_TEST : SERVER_TYPE_PRODUCT
+
+    switch (serverType) {
+        case SERVER_TYPE_TEST:
+            HOST_URL = "https://api.currencyfreaks.com"
+            DEBUG = true
+            break
+
+        default:
+            HOST_URL = "https://api.currencyfreaks.com"
+            DEBUG = false
+            break
+    }
+
+    APP_ID_KEY = '4186786cf9984acab9ada9c251335b5a'
+}
