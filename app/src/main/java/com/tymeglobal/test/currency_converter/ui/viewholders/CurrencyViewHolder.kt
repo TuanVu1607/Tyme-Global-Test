@@ -1,29 +1,27 @@
 package com.tymeglobal.test.currency_converter.ui.viewholders
 
 import androidx.core.view.isVisible
-import androidx.recyclerview.widget.RecyclerView
 import com.tymeglobal.test.currency_converter.BR
 import com.tymeglobal.test.currency_converter.common.extensions.setOnSingleClickListener
 import com.tymeglobal.test.currency_converter.common.interfaces.ItemClickListener
 import com.tymeglobal.test.currency_converter.data.local.db.entity.CurrencyInfoEntity
 import com.tymeglobal.test.currency_converter.databinding.ItemCurrencySymbolsBinding
-import com.tymeglobal.test.currency_converter.utils.LoggerUtils
+import com.tymeglobal.test.currency_converter.ui.base.BaseViewHolder
 
-class CurrencyViewHolder(private val binding: ItemCurrencySymbolsBinding) :
-    RecyclerView.ViewHolder(binding.root) {
+class CurrencyViewHolder(binding: ItemCurrencySymbolsBinding) :
+    BaseViewHolder<ItemCurrencySymbolsBinding>(binding) {
 
     fun bind(
-        data: CurrencyInfoEntity,
+        item: CurrencyInfoEntity,
         selectedItem: CurrencyInfoEntity,
-        itemClickListener: ItemClickListener
+        listener: ItemClickListener
     ) {
-        binding.setVariable(BR.currencySymbols, data)
+        binding.setVariable(BR.currencySymbols, item)
         binding.executePendingBindings()
-        binding.ivCheck.isVisible = selectedItem.currencyCode == data.currencyCode
+        binding.ivCheck.isVisible = selectedItem.currencyCode == item.currencyCode
 
-        itemView.setOnSingleClickListener {
-            if (selectedItem.currencyCode != data.currencyCode)
-                itemClickListener.onClick(data)
+        binding.root.setOnSingleClickListener {
+            if (selectedItem.currencyCode != item.currencyCode) listener.onClick(item)
         }
     }
 }

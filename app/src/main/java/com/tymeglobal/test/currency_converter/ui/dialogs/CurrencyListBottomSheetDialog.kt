@@ -24,7 +24,7 @@ class CurrencyListBottomSheetDialog(
     private val onCurrencySelectListener: OnCurrencySelectListener
 ) : BottomSheetDialog(context), ItemClickListener {
     private val binding = CurrencyListBottomSheetDialogBinding.inflate(layoutInflater)
-    private lateinit var adapter: CurrencyAdapter
+    private lateinit var currencyAdapter: CurrencyAdapter
 
     private var keySearch = ""
     private var searchCurrencyList = currencyList
@@ -58,7 +58,7 @@ class CurrencyListBottomSheetDialog(
                                     || currency.countryName.lowercase().removeNonAlphanumeric()
                                 .contains(searchText)
                         }
-                    adapter.setAdapterData(searchCurrencyList)
+                    currencyAdapter.submitList(searchCurrencyList)
                     setVisibleData()
                 }
                 return false
@@ -67,18 +67,14 @@ class CurrencyListBottomSheetDialog(
     }
 
     private fun initAdapter() {
-        adapter = CurrencyAdapter(this)
-        adapter.setSelectedItem(selectedCurrency)
-        adapter.setAdapterData(searchCurrencyList)
-        binding.rcvCurrencySymbols.layoutManager =
-            LinearLayoutManager(context, RecyclerView.VERTICAL, false)
-        binding.rcvCurrencySymbols.addItemDecoration(
-            DividerItemDecoration(
-                binding.rcvCurrencySymbols.context,
-                RecyclerView.VERTICAL
-            )
-        )
-        binding.rcvCurrencySymbols.adapter = adapter
+        currencyAdapter = CurrencyAdapter(this)
+        currencyAdapter.setSelectedItem(selectedCurrency)
+        currencyAdapter.submitList(searchCurrencyList)
+        binding.rcvCurrencySymbols.apply {
+            layoutManager = LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+            addItemDecoration(DividerItemDecoration(binding.rcvCurrencySymbols.context, RecyclerView.VERTICAL))
+            adapter = currencyAdapter
+        }
         setVisibleData()
     }
 

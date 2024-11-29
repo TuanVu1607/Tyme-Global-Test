@@ -8,6 +8,7 @@ import com.tymeglobal.test.currency_converter.data.remote.extensions.toApiErrorR
 import com.tymeglobal.test.currency_converter.common.extensions.toast
 import com.tymeglobal.test.currency_converter.common.process.Loader
 import com.tymeglobal.test.currency_converter.data.remote.response.ApiErrorResponse
+import com.tymeglobal.test.currency_converter.utils.ImageUtils
 import com.tymeglobal.test.currency_converter.utils.LoggerUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.CancellationException
