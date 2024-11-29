@@ -21,5 +21,8 @@ This currency converter application is built using Kotlin as the primary languag
 - Adjust API keys and endpoints based on your chosen currency conversion API (Free version will limit the number of requests and permissions to use API).
 - Consider implementing data caching and refresh mechanisms to improve user experience.
 ## Demo
-![currency_converter_demo](https://github.com/user-attachments/assets/8c0b0dbd-ce59-432f-bf24-46ce293f4425)
+https://github.com/user-attachments/assets/7f0ee552-2480-4a55-bc53-6236769ac0d9
+
+
+
 
