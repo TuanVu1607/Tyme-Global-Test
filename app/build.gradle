@@ -110,7 +110,7 @@ dependencies {
 
     //Dependency Injection
     implementation(libs.hilt.android)
-    ksp(libs.hilt.compiler)
+    kapt(libs.hilt.compiler)
 
     //Database
     implementation(libs.room)
